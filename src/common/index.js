@@ -1,0 +1,1 @@
+export * as mappings from './mappings';
