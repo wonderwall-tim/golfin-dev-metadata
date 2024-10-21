@@ -6,9 +6,9 @@ const CAR_TOKEN_BITS = [
     { name: "serialNumber", bits: 8 }, // New field for serial number
     
     { name: "item", bits: 16 },         // Existing field
-    { name: "apperance", bits: 12 },     // Updated field for appearance
+    { name: "appearance", bits: 12 },     // Updated field for appearance
 
-    { name: "padding3", bits: 36 },     // Padding
+    { name: "padding4", bits: 36 },     // Padding
 
     { name: "power", bits: 12 },        // New field for power
     { name: "accuracy", bits: 12 },     // New field for accuracy

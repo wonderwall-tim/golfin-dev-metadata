@@ -1,5 +1,5 @@
-import { valueById } from "./values/materials";
-import { Mapping } from "./Mapping";
+import { valueById } from "./values/materials/valueById.js";
+import { Mapping } from "./Mapping.js";
 
 export class MaterialMapping extends Mapping {
 

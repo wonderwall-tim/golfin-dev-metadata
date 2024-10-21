@@ -1,6 +1,6 @@
-import { valueById } from "./values/descriptions";
-import { Mapping } from "./Mapping";
-import { MaterialMapping } from "./MaterialMapping";
+import { valueById } from "./values/descriptions/valueById.js";
+import { Mapping } from "./Mapping.js";
+import { MaterialMapping } from "./MaterialMapping.js";
 
 export class DescriptionMapping extends Mapping {
 

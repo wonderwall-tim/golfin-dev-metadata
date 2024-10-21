@@ -80,7 +80,7 @@ Node-based Metadata generators for golfin dev
 - Legendary: Premium, Performance
 - Supreme: Elite, Masterclass
 
-#### Compressions
+#### Compressionsbj
 
 - Common: High
 - Uncommon: Medium-High
@@ -240,27 +240,28 @@ Node-based Metadata generators for golfin dev
 ## Example json
 
 ```json
-{   
-    serialNumber: "4", // INPUT
-    item: "4", // INPUT, affect image, I
-    apperance: "2", // INPUT, affect image, A
-    
-    power: "210", // power
-    accuracy: "210", // acc
-    spin: "230", // spin
-    recovery: "230", // spin
-    durability: "30", // Durability
-    weight: "7", // recovery
+{
+    serialNumber: "4",
 
-    model: "1", // from mapping
-    rarity: "4", // INPUT, but can be mapped
-    brand: "5", // from mapping 
-    flex: "3", // from mapping
-    loft: "1", // from mapping
-    material: "10", // from mapping
-    
-    type: "1", // from mapping
-    nfFlag: "1" // always 1
+    item: "2",
+    appearance: "5",
+
+    power: "860",
+    accuracy: "500",
+    spin: "600",
+    recovery: "200",
+    durability: "340",
+    weight: "7",
+
+    model: "1",
+    rarity: "4",
+    brand: "5",
+    flex: "3",
+    loft: "1",
+    material: "2",
+
+    type: "1",
+    nfFlag: "1"
 },
 
 ```
@@ -288,4 +289,12 @@ Node-based Metadata generators for golfin dev
 
 - Renew the metadata mapping if there are new update
 - Renew the changelog (maintain versioning)
-- publish the new package to nexus lib
+- Renew the package json version
+- commit message as the version
+- git push to github
+- publish a new tag, click tags, create new release, enter the upcoming version (same as the verion on CHANGELOG, package), eg v1.0.0 the description is copying from the current CHANGELOG readme and click publish release
+- on other repo, package json using `golfin-dev-metadata: "git://github.com/<REPO>/golfin-dev-metadata.git#v<VERSIONING>"`
+- run the yarn, and the package can be used
+
+## Running locally
+- run `node ./script/generate` and the example tokenId and decoded result of the generated tokenId will be shown

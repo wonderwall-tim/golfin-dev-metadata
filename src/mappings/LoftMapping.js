@@ -1,5 +1,5 @@
-import { valueById } from "./values/lofts";
-import { Mapping } from "./Mapping";
+import { valueById } from "./values/lofts/valueById.js";
+import { Mapping } from "./Mapping.js";
 
 export class LoftMapping extends Mapping {
 

@@ -1,5 +1,5 @@
-import { valueById } from "./values/flexs";
-import { Mapping } from "./Mapping";
+import { valueById } from "./values/flexs/valueById.js";
+import { Mapping } from "./Mapping.js";
 
 export class FlexMapping extends Mapping {
 

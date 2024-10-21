@@ -1,19 +1,19 @@
-import { Mapping } from "./Mapping";
+import { Mapping } from "./Mapping.js";
 /* import { ManufacturerMapping } from "./ManufacturerMapping";
 import { CollectionMapping } from "./CollectionMapping";
 import { ClassMapping } from "./ClassMapping"; */
-import { RarityMapping } from "./RarityMapping";
+import { RarityMapping } from "./RarityMapping.js";
 /* import { YearMapping } from "./YearMapping";
 import { RacingAttributesMapping } from "./RacingAttributesMapping"; */
-import { DescriptionMapping } from "./DescriptionMapping";
-import { MaterialMapping } from "./MaterialMapping";
-import { LoftMapping } from "./LoftMapping";
-import { FlexMapping } from "./FlexMapping";
-import { BrandMapping } from "./BrandMapping";
-import { ModelMapping } from "./ModelMapping";
-import { ImageMapping } from "./ImageMapping";
-import { NameMapping } from "./NameMapping";
-import { TypeMapping } from "./TypeMapping";
+import { DescriptionMapping } from "./DescriptionMapping.js";
+import { MaterialMapping } from "./MaterialMapping.js";
+import { LoftMapping } from "./LoftMapping.js";
+import { FlexMapping } from "./FlexMapping.js";
+import { BrandMapping } from "./BrandMapping.js";
+import { ModelMapping } from "./ModelMapping.js";
+import { ImageMapping } from "./ImageMapping.js";
+import { NameMapping } from "./NameMapping.js";
+import { TypeMapping } from "./TypeMapping.js";
 
 export class BaseMapping extends Mapping {
 
@@ -26,12 +26,9 @@ export class BaseMapping extends Mapping {
             new MaterialMapping(), // M
             new ModelMapping(), // M
             new RarityMapping(),
-            /*        new YearMapping(),
-                   new RacingAttributesMapping(),   */
             new NameMapping(),
             new DescriptionMapping(),
             new ImageMapping()
-            /*  new VideoMapping() */
         ];
     }
 

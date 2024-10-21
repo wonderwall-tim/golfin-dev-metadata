@@ -1,5 +1,5 @@
-import { valueById } from "../common/mappings/rarities";
-import { Mapping } from "./Mapping";
+import { valueById } from "../common/mappings/rarities/valueById.js";
+import { Mapping } from "./Mapping.js";
 
 export class RarityMapping extends Mapping {
 

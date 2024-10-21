@@ -69,7 +69,7 @@ export const valueById = {
     "M12_I2": "Rules of golf books clarify regulations for players.",
     "M12_I3": "Course maps assist in navigating unfamiliar layouts.",
     "M12_I4": "Weather apps help golfers plan their rounds effectively.",
-    "M12_I5": "Golf travel guides highlight the best courses around the world."F
+    "M12_I5": "Golf travel guides highlight the best courses around the world."
     
 }
 

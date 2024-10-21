@@ -1,0 +1,42 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.valueById = void 0;
+exports.valueById = {
+    "1": "Standard Loft",
+    "2": "Controlled Loft",
+    "3": "Distance Driver Loft",
+    "4": "Fairway Wood Loft",
+    "5": "Low Loft",
+    "6": "Adjustable Loft",
+    "7": "High Launch Loft",
+    "8": "Mid Launch Loft",
+    "9": "Low Launch Loft",
+    "10": "Versatile Loft",
+    "11": "Precision Loft",
+    "12": "Dynamic Loft",
+    "13": "Optimized Loft",
+    "14": "Tour Loft",
+    "15": "Custom Loft",
+    "16": "Performance Loft",
+    "17": "Hybrid Loft",
+    "18": "Game Improvement Loft",
+    "19": "Speed Loft",
+    "20": "Control Loft",
+    "21": "Power Loft",
+    "22": "Stability Loft",
+    "23": "Distance Loft",
+    "24": "Launch Control Loft",
+    "25": "Versatile Adjustable Loft",
+    "26": "Expert Loft",
+    "27": "All-Around Loft",
+    "28": "Specialized Loft",
+    "29": "Enhanced Loft",
+    "30": "Pro Loft",
+    "31": "Elite Loft",
+    "32": "Master Loft",
+    "33": "Ultimate Loft",
+    "34": "Signature Loft",
+    "35": "NextGen Loft",
+    "36": "Legacy Loft"
+};
+//# sourceMappingURL=valueById.js.map

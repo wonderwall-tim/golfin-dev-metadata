@@ -1,5 +1,5 @@
-import { valueById } from "../common/mappings/types";
-import { Mapping } from "./Mapping";
+import { valueById } from "../common/mappings/types/valueById.js";
+import { Mapping } from "./Mapping.js";
 
 export class TypeMapping extends Mapping {
 

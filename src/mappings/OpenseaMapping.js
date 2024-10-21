@@ -1,6 +1,6 @@
-import { BaseMapping } from "./BaseMapping";
-import { Mapping } from "./Mapping";
-import { urls } from "../config";
+import { BaseMapping } from "./BaseMapping.js";
+import { Mapping } from "./Mapping.js";
+import { urls } from "../config.js";
 
 export class OpenseaMapping extends Mapping {
 
@@ -14,7 +14,7 @@ export class OpenseaMapping extends Mapping {
             metadata.attributes = [
                 { trait_type: "rarity", value: metadata.rarity },
 
-                { trait_type: "mdoel", value: metadata.mdoel },
+                { trait_type: "model", value: metadata.model },
                 { trait_type: "material", value: metadata.material },
                 { trait_type: "type", value: metadata.type },
                 { trait_type: "brand", value: metadata.brand },

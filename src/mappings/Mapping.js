@@ -1,9 +1,9 @@
-import { Metadata } from "../Metadata";
+import { Metadata } from "../Metadata.js"
 import assert from "assert";
 import deepEqual from "deep-equal";
 
 export class Mapping {
-  
+
   constructor() {
   };
 
@@ -24,8 +24,8 @@ export class Mapping {
 
   getKeyFromValue(value) {
     const values = this.getValues();
-    const entry = Object.entries(values).find((entry) => deepEqual(entry[1],value));
-    if(entry == null) {
+    const entry = Object.entries(values).find((entry) => deepEqual(entry[1], value));
+    if (entry == null) {
       throw new Error(`Cannot find mapping of ${JSON.stringify(value)}`);
     }
     return entry[0];
@@ -47,14 +47,14 @@ export class Mapping {
   build(metadata, buildContext = {}) {
     assert(metadata.core, "Missing Core metadata");
     const meta = this.getPrerequisiteMappings()
-    .reduce((acc, mapping) => {
-      if(mapping.shouldBuild(metadata, buildContext)) {
-        return mapping.build(acc, buildContext);
-      } else {
-        return acc;
-      }
-    },
-    {...metadata});
+      .reduce((acc, mapping) => {
+        if (mapping.shouldBuild(metadata, buildContext)) {
+          return mapping.build(acc, buildContext);
+        } else {
+          return acc;
+        }
+      },
+        { ...metadata });
     return meta;
   }
 

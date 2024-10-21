@@ -1,5 +1,5 @@
-import { valueById } from "./values/brands";
-import { Mapping } from "./Mapping";
+import { valueById } from "./values/brands/valueById.js";
+import { Mapping } from "./Mapping.js";
 
 export class BrandMapping extends Mapping {
 
