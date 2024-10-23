@@ -241,29 +241,28 @@ Node-based Metadata generators for golfin dev
 
 ```json
 {
-    serialNumber: "4",
+  "serialNumber": "4",
 
-    item: "2",
-    appearance: "5",
+  "item": "2",
+  "appearance": "5",
 
-    power: "860",
-    accuracy: "500",
-    spin: "600",
-    recovery: "200",
-    durability: "340",
-    weight: "7",
+  "power": "860",
+  "accuracy": "500",
+  "spin": "600",
+  "recovery": "200",
+  "durability": "340",
+  "weight": "7",
 
-    model: "1",
-    rarity: "4",
-    brand: "5",
-    flex: "3",
-    loft: "1",
-    material: "2",
+  "model": "1",
+  "rarity": "4",
+  "brand": "5",
+  "flex": "3",
+  "loft": "1",
+  "material": "2",
 
-    type: "1",
-    nfFlag: "1"
-},
-
+  "type": "1",
+  "nfFlag": "1"
+}
 ```
 
 ## Features
@@ -297,4 +296,5 @@ Node-based Metadata generators for golfin dev
 - run the yarn, and the package can be used
 
 ## Running locally
+
 - run `node ./script/generate` and the example tokenId and decoded result of the generated tokenId will be shown
