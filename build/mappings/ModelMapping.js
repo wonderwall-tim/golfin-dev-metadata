@@ -32,8 +32,6 @@ var ModelMapping = /** @class */ (function (_super) {
             metadata.core.model = this.getKeyFromValue(metadata.model);
         }
         else if (metadata.model == null) {
-            console.log('model second');
-            console.log(this.getValuesFromKey(metadata.core.model));
             metadata.model = this.getValuesFromKey(metadata.core.model);
         }
         return metadata;
