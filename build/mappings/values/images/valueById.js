@@ -1,5 +1,5 @@
 /* PENDING */
-var valueById = {
+const valueById = {
     '*': ".png",
     "T1_M2_I1_A1": ".jpg",
     "T1_M2_I2_A1": ".jpg",

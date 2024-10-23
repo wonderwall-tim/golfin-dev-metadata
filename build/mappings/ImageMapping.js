@@ -1,49 +1,29 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var valueById = require('./values/images/valueById.js');
-var urls = require('../config.js');
-var Mapping = require('./Mapping.js');
-var TypeMapping = require('./TypeMapping.js');
-var MaterialMapping = require('./MaterialMapping.js');
-var NameMapping = require('./NameMapping.js');
-var DescriptionMapping = require('./DescriptionMapping.js');
-var ImageMapping = /** @class */ (function (_super) {
-    __extends(ImageMapping, _super);
-    function ImageMapping() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    ImageMapping.prototype.getPrerequisiteMappings = function () {
+const valueById = require('./values/images/valueById.js');
+const urls = require('../config.js');
+const Mapping = require('./Mapping.js');
+const TypeMapping = require('./TypeMapping.js');
+const MaterialMapping = require('./MaterialMapping.js');
+const NameMapping = require('./NameMapping.js');
+const DescriptionMapping = require('./DescriptionMapping.js');
+class ImageMapping extends Mapping {
+    getPrerequisiteMappings() {
         return [new TypeMapping(), new MaterialMapping(), new NameMapping(), new DescriptionMapping()];
-    };
-    ImageMapping.prototype.getValues = function () {
+    }
+    getValues() {
         return valueById;
-    };
-    ImageMapping.prototype.shouldBuild = function (metadata, context) {
+    }
+    shouldBuild(metadata, context) {
         return metadata.image == null || metadata.core.image == null;
-    };
-    ImageMapping.prototype.build = function (metadata, context) {
-        metadata = _super.prototype.build.call(this, metadata, context);
-        var imageURLKey = "".concat(metadata.core.type, "_").concat(metadata.core.material, "_").concat(metadata.core.item, "_").concat(metadata.core.appearance);
-        var imageMapKey = "T".concat(metadata.core.type, "_M").concat(metadata.core.material, "_I").concat(metadata.core.item, "_A").concat(metadata.core.appearance);
-        var image = this.getValuesFromKey(imageMapKey);
-        metadata.image = "".concat(urls[context.network].image_url, "/GOLFIN-").concat(imageURLKey).concat(image);
+    }
+    build(metadata, context) {
+        metadata = super.build(metadata, context);
+        const imageURLKey = `${metadata.core.type}_${metadata.core.material}_${metadata.core.item}_${metadata.core.appearance}`;
+        const imageMapKey = `T${metadata.core.type}_M${metadata.core.material}_I${metadata.core.item}_A${metadata.core.appearance}`;
+        const image = this.getValuesFromKey(imageMapKey);
+        metadata.image = `${urls[context.network].image_url}/GOLFIN-${imageURLKey}${image}`;
         return metadata;
-    };
-    return ImageMapping;
-}(Mapping));
+    }
+}
 ;
 module.exports = ImageMapping;
 //# sourceMappingURL=ImageMapping.js.map

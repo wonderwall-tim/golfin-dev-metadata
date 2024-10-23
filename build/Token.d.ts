@@ -13,15 +13,12 @@ declare class Token {
     /**
      *
      * @param {{metadata?:object,id?:BN}} data
-     * @param {{name:string, bits: number}} layout
+     * @param {BitsLayout} layout
      */
     constructor(data: {
         metadata?: object;
         id?: BN;
-    }, layout?: {
-        name: string;
-        bits: number;
-    }, options?: {
+    }, layout?: BitsLayout, options?: {
         autoPadding: boolean;
     });
     id: BN;
@@ -59,3 +56,4 @@ declare class Token {
     isMatchedTo(value: string | BN): boolean;
 }
 import BN = require("bn.js");
+import { BitsLayout } from "./Layout.js";

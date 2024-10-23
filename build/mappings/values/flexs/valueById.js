@@ -1,4 +1,4 @@
-var valueById = {
+const valueById = {
     "1": "Soft Flex (Beginner)",
     "2": "Regular Flex (Intermediate)",
     "3": "Stiff Flex (Advanced)",

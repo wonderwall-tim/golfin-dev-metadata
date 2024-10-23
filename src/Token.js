@@ -6,14 +6,14 @@
 const bitJs = require('bits.js')
 const BN = require('bn.js')
 const bigInt = require('big-integer')
-const { CAR_LAYOUT, getLayoutMask } = require('./Layout.js')
+const { CAR_LAYOUT, getLayoutMask, BitsLayout } = require('./Layout.js')
 
 class Token {
 
   /**
    * 
    * @param {{metadata?:object,id?:BN}} data
-   * @param {{name:string, bits: number}} layout 
+   * @param {BitsLayout} layout 
    */
   constructor(data, layout = CAR_LAYOUT, options = { autoPadding: true }) {
     if (data.id) {

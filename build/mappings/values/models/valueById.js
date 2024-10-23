@@ -1,4 +1,4 @@
-var valueById = {
+const valueById = {
     "1": "Model X (High Performance)",
     "2": "Model Y (Versatile Design)",
     "3": "Model Z (All-Terrain Capability)",

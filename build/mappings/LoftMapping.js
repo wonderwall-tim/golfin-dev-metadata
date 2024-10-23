@@ -1,33 +1,14 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var valueById = require('./values/lofts/valueById.js');
-var Mapping = require('./Mapping.js');
-var LoftMapping = /** @class */ (function (_super) {
-    __extends(LoftMapping, _super);
-    function LoftMapping() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    LoftMapping.prototype.getValues = function () {
+const valueById = require('./values/lofts/valueById.js');
+const Mapping = require('./Mapping.js');
+class LoftMapping extends Mapping {
+    getValues() {
         return valueById;
-    };
-    LoftMapping.prototype.shouldBuild = function (metadata, context) {
+    }
+    shouldBuild(metadata, context) {
         return metadata.loft == null || metadata.core.loft == null;
-    };
-    LoftMapping.prototype.build = function (metadata, context) {
-        metadata = _super.prototype.build.call(this, metadata, context);
+    }
+    build(metadata, context) {
+        metadata = super.build(metadata, context);
         if (context.coreOnly && metadata.core.loft == null) {
             metadata.core.loft = this.getKeyFromValue(metadata.loft);
         }
@@ -35,9 +16,8 @@ var LoftMapping = /** @class */ (function (_super) {
             metadata.loft = this.getValuesFromKey(metadata.core.loft);
         }
         return metadata;
-    };
-    return LoftMapping;
-}(Mapping));
+    }
+}
 ;
 module.exports = LoftMapping;
 //# sourceMappingURL=LoftMapping.js.map

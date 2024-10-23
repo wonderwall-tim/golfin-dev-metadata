@@ -1,4 +1,4 @@
-var valueById = {
+const valueById = {
     "1": "Beginner's Choice",
     "2": "Midway Performance",
     "3": "Pro Edge",

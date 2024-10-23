@@ -1,72 +1,59 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 /* import { Metadata } from "../Metadata.js"
 import assert from "assert";
 import deepEqual from "deep-equal";
  */
-var Metadata = require('../Metadata.js');
-var assert = require('assert');
-var deepEqual = require('deep-equal');
-var Mapping = /** @class */ (function () {
-    function Mapping() {
+const Metadata = require('../Metadata.js');
+const assert = require('assert');
+const deepEqual = require('deep-equal');
+class Mapping {
+    constructor() {
     }
     ;
-    Mapping.prototype.getName = function () {
+    getName() {
         return this.constructor.name;
-    };
-    Mapping.prototype.getValues = function () {
+    }
+    getValues() {
         return {};
-    };
-    Mapping.prototype.getValuesFromKey = function (key) {
-        var values = this.getValues();
-        var value = values[key] || values["*"];
-        assert(value, "".concat(this.getName(), " values ").concat(key, " not found."));
+    }
+    getValuesFromKey(key) {
+        const values = this.getValues();
+        const value = values[key] || values["*"];
+        assert(value, `${this.getName()} values ${key} not found.`);
         return value;
-    };
-    Mapping.prototype.getKeyFromValue = function (value) {
-        var values = this.getValues();
-        var entry = Object.entries(values).find(function (entry) { return deepEqual(entry[1], value); });
+    }
+    getKeyFromValue(value) {
+        const values = this.getValues();
+        const entry = Object.entries(values).find((entry) => deepEqual(entry[1], value));
         if (entry == null) {
-            throw new Error("Cannot find mapping of ".concat(JSON.stringify(value)));
+            throw new Error(`Cannot find mapping of ${JSON.stringify(value)}`);
         }
         return entry[0];
-    };
-    Mapping.prototype.getPrerequisiteMappings = function () {
+    }
+    getPrerequisiteMappings() {
         return [];
-    };
-    Mapping.prototype.shouldBuild = function (metadata) {
+    }
+    shouldBuild(metadata) {
         return true;
-    };
+    }
     /**
      * @param {Metadata} metadata
      * @param {{tokenId:String,mappings:String[]}} buildContext
      * @returns Metadata
      */
-    Mapping.prototype.build = function (metadata, buildContext) {
-        if (buildContext === void 0) { buildContext = {}; }
+    build(metadata, buildContext = {}) {
         assert(metadata.core, "Missing Core metadata");
-        var meta = this.getPrerequisiteMappings()
-            .reduce(function (acc, mapping) {
+        const meta = this.getPrerequisiteMappings()
+            .reduce((acc, mapping) => {
             if (mapping.shouldBuild(metadata, buildContext)) {
                 return mapping.build(acc, buildContext);
             }
             else {
                 return acc;
             }
-        }, __assign({}, metadata));
+        }, { ...metadata });
         return meta;
-    };
-    return Mapping;
-}());
+    }
+}
 ;
 module.exports = Mapping;
 //# sourceMappingURL=Mapping.js.map

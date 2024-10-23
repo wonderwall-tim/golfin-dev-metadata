@@ -1,5 +1,8 @@
 # CHANGELOG (UPDATE IT FOR EVERY COMMIT)
 
+## 1.1.2 (2024/10/23)
+* BitsLayout
+
 ## 1.1.1 (2024/10/23)
 * Clean up log
 

@@ -1,5 +1,6 @@
 const { Token } = require('./Token.js')
 const OpenseaMapping = require('./mappings/OpenseaMapping.js')
+const BitsLayout = require('./Layout.js')
 /* import { Token } from './Token.js'
 import { OpenseaMapping } from './mappings/OpenseaMapping.js'; */
 /* import { BitsLayout } from './Layout.js'; */
@@ -20,7 +21,7 @@ class Metadata {
   /**
    * 
    * @param {object} json 
-   * @param {{name:string, bits: number}} layout 
+   * @param {BitsLayout} layout 
    * @param {string} network
    */
   static fromJSON(json, layout, network = "137") {

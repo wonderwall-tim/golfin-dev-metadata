@@ -1,4 +1,4 @@
-var valueById = {
+const valueById = {
     "1": "Graphite (Lightweight and Strong)",
     "2": "Steel (Durable and Reliable)",
     "3": "Aluminum (Light and Corrosion-Resistant)",

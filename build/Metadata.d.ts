@@ -3,13 +3,10 @@ declare class Metadata {
     /**
      *
      * @param {object} json
-     * @param {{name:string, bits: number}} layout
+     * @param {BitsLayout} layout
      * @param {string} network
      */
-    static fromJSON(json: object, layout: {
-        name: string;
-        bits: number;
-    }, network?: string): Metadata;
+    static fromJSON(json: object, layout: typeof BitsLayout, network?: string): Metadata;
     /**
      *
      * @param {Token} token
@@ -20,3 +17,4 @@ declare class Metadata {
     getToken(): Token;
     toJSON(network?: string): any;
 }
+import BitsLayout = require("./Layout.js");

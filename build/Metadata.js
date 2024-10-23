@@ -1,50 +1,48 @@
-var Token = require('./Token.js').Token;
-var OpenseaMapping = require('./mappings/OpenseaMapping.js');
+const { Token } = require('./Token.js');
+const OpenseaMapping = require('./mappings/OpenseaMapping.js');
+const BitsLayout = require('./Layout.js');
 /* import { Token } from './Token.js'
 import { OpenseaMapping } from './mappings/OpenseaMapping.js'; */
 /* import { BitsLayout } from './Layout.js'; */
-var Metadata = /** @class */ (function () {
+class Metadata {
     /**
      *
      * @param {Token} token
      */
-    function Metadata(token) {
+    constructor(token) {
         this.token = token;
         this.metadata = {};
     }
-    Metadata.prototype.getToken = function () {
+    getToken() {
         return this.token;
-    };
+    }
     /**
      *
      * @param {object} json
-     * @param {{name:string, bits: number}} layout
+     * @param {BitsLayout} layout
      * @param {string} network
      */
-    Metadata.fromJSON = function (json, layout, network) {
-        if (network === void 0) { network = "137"; }
+    static fromJSON(json, layout, network = "137") {
         json.core = json.core || {};
-        var metadata = new OpenseaMapping()
+        const metadata = new OpenseaMapping()
             .build(json, {
-            network: network,
+            network,
             coreOnly: true
         });
-        var token = Token.fromMetadata(metadata.core, layout);
+        const token = Token.fromMetadata(metadata.core, layout);
         return new Metadata(token);
-    };
-    Metadata.prototype.toJSON = function (network) {
-        if (network === void 0) { network = "137"; }
+    }
+    toJSON(network = "137") {
         if (!this.metadata[network]) {
             this.metadata[network] = new OpenseaMapping()
                 .build({ core: this.token.getCoreMetadata() }, {
-                network: network,
+                network,
                 tokenID: this.token.getTokenID()
             });
         }
         return this.metadata[network];
-    };
-    return Metadata;
-}());
+    }
+}
 ;
 module.exports = Metadata;
 //# sourceMappingURL=Metadata.js.map

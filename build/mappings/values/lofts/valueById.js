@@ -1,4 +1,4 @@
-var valueById = {
+const valueById = {
     "1": "Standard Loft",
     "2": "Controlled Loft",
     "3": "Distance Driver Loft",

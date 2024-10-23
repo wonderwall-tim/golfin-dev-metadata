@@ -1,4 +1,4 @@
-var urls = {
+const urls = {
     '1': {
         image_url: "purple-able-smelt-882.mypinata.cloud",
         meta_url: "https://game-meta.golfin.dev/",

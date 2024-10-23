@@ -1,4 +1,4 @@
-var valueById = {
+const valueById = {
     "M1_I1": "Graphite shafts are lightweight and provide increased swing speed, ideal for beginners.",
     "M1_I2": "Steel shafts offer durability and control, preferred by many experienced players.",
     "M1_I3": "Titanium drivers are known for their strength and ability to maximize distance.",

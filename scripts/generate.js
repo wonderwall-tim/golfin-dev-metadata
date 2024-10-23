@@ -14,7 +14,7 @@ const core = {
     spin: "600",
     recovery: "200",
     durability: "340",
-    
+
     weight: "7",
     model: "1",
     rarity: "4",
@@ -27,12 +27,22 @@ const core = {
     nfFlag: "1"
 }
 const toJSON = (core) => {
-    const token = Token.fromMetadata(core, CAR_LAYOUT);
-    const metadata = new Metadata(token).toJSON();
-    console.log(`---------------------"${metadata.name}"-----------------------`);
-    console.log(`TokenID for "${metadata.name}": ${token.getTokenID().toString(10)}`);
-    console.dir(metadata);
-    console.log(`------------------========================---------------------`);
+    try {
+        const testToken = new Token({ id: '57910179826535473067770440987776038168217872548489934021543459020073450078724' })
+        const testMetadata = new Metadata(testToken)
+        const testFullMetadata = testMetadata.toJSON('11155111');
+        console.log(testFullMetadata);
+
+        const token = Token.fromMetadata(core, CAR_LAYOUT);
+        const metadata = new Metadata(token).toJSON();
+        console.log(`---------------------"${metadata.name}"-----------------------`);
+        console.log(`TokenID for "${metadata.name}": ${token.getTokenID().toString(10)}`);
+        console.dir(metadata);
+        console.log(`------------------========================---------------------`);
+    } catch (error) {
+        console.error(error);
+
+    }
 }
 
 module.exports = toJSON(core);
