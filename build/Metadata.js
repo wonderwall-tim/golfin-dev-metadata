@@ -1,8 +1,7 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Metadata = void 0;
-var Token_js_1 = require("./Token.js");
-var OpenseaMapping_js_1 = require("./mappings/OpenseaMapping.js");
+var Token = require('./Token.js').Token;
+var OpenseaMapping = require('./mappings/OpenseaMapping.js');
+/* import { Token } from './Token.js'
+import { OpenseaMapping } from './mappings/OpenseaMapping.js'; */
 /* import { BitsLayout } from './Layout.js'; */
 var Metadata = /** @class */ (function () {
     /**
@@ -25,18 +24,18 @@ var Metadata = /** @class */ (function () {
     Metadata.fromJSON = function (json, layout, network) {
         if (network === void 0) { network = "137"; }
         json.core = json.core || {};
-        var metadata = new OpenseaMapping_js_1.OpenseaMapping()
+        var metadata = new OpenseaMapping()
             .build(json, {
             network: network,
             coreOnly: true
         });
-        var token = Token_js_1.Token.fromMetadata(metadata.core, layout);
+        var token = Token.fromMetadata(metadata.core, layout);
         return new Metadata(token);
     };
     Metadata.prototype.toJSON = function (network) {
         if (network === void 0) { network = "137"; }
         if (!this.metadata[network]) {
-            this.metadata[network] = new OpenseaMapping_js_1.OpenseaMapping()
+            this.metadata[network] = new OpenseaMapping()
                 .build({ core: this.token.getCoreMetadata() }, {
                 network: network,
                 tokenID: this.token.getTokenID()
@@ -46,6 +45,6 @@ var Metadata = /** @class */ (function () {
     };
     return Metadata;
 }());
-exports.Metadata = Metadata;
 ;
+module.exports = Metadata;
 //# sourceMappingURL=Metadata.js.map

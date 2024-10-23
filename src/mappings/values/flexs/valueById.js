@@ -1,4 +1,4 @@
-export const valueById = {
+const valueById = {
     "1": "Soft Flex (Beginner)",
     "2": "Regular Flex (Intermediate)",
     "3": "Stiff Flex (Advanced)",
@@ -36,3 +36,5 @@ export const valueById = {
     "35": "Customizable Flex (User-Defined)",
     "36": "Smart Flex (Tech-Integrated)"
 }
+
+module.exports = valueById

@@ -1,7 +1,9 @@
-import { Token } from './Token.js'
-import { OpenseaMapping } from './mappings/OpenseaMapping.js';
+const { Token } = require('./Token.js')
+const OpenseaMapping = require('./mappings/OpenseaMapping.js')
+/* import { Token } from './Token.js'
+import { OpenseaMapping } from './mappings/OpenseaMapping.js'; */
 /* import { BitsLayout } from './Layout.js'; */
-export class Metadata {
+class Metadata {
   /**
    * 
    * @param {Token} token 
@@ -44,3 +46,5 @@ export class Metadata {
   }
 
 };
+
+module.exports = Metadata

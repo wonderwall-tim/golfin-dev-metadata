@@ -1,7 +1,7 @@
-import { valueById } from "./values/flexs/valueById.js";
-import { Mapping } from "./Mapping.js";
+const valueById= require('./values/flexs/valueById.js')
+const Mapping = require('./Mapping.js')
 
-export class FlexMapping extends Mapping {
+class FlexMapping extends Mapping {
 
   getValues() {
     return valueById;
@@ -22,3 +22,5 @@ export class FlexMapping extends Mapping {
   }
 
 };
+
+module.exports = FlexMapping

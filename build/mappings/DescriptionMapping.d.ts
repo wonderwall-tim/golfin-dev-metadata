@@ -1,4 +1,5 @@
-export class DescriptionMapping extends Mapping {
+export = DescriptionMapping;
+declare class DescriptionMapping extends Mapping {
     getPrerequisiteMappings(): MaterialMapping[];
     getValues(): {
         M1_I1: string;
@@ -65,5 +66,5 @@ export class DescriptionMapping extends Mapping {
     shouldBuild(metadata: any, context: any): boolean;
     build(metadata: any, context: any): any;
 }
-import { Mapping } from "./Mapping.js";
-import { MaterialMapping } from "./MaterialMapping.js";
+import Mapping = require("./Mapping.js");
+import MaterialMapping = require("./MaterialMapping.js");

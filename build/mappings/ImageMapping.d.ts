@@ -1,4 +1,5 @@
-export class ImageMapping extends Mapping {
+export = ImageMapping;
+declare class ImageMapping extends Mapping {
     getPrerequisiteMappings(): (MaterialMapping | DescriptionMapping | TypeMapping | NameMapping)[];
     getValues(): {
         '*': string;
@@ -20,8 +21,8 @@ export class ImageMapping extends Mapping {
     shouldBuild(metadata: any, context: any): boolean;
     build(metadata: any, context: any): any;
 }
-import { Mapping } from "./Mapping.js";
-import { MaterialMapping } from "./MaterialMapping.js";
-import { DescriptionMapping } from "./DescriptionMapping.js";
-import { TypeMapping } from "./TypeMapping.js";
-import { NameMapping } from "./NameMapping.js";
+import Mapping = require("./Mapping.js");
+import MaterialMapping = require("./MaterialMapping.js");
+import DescriptionMapping = require("./DescriptionMapping.js");
+import TypeMapping = require("./TypeMapping.js");
+import NameMapping = require("./NameMapping.js");

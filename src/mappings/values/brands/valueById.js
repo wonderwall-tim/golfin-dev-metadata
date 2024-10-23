@@ -1,4 +1,4 @@
-export const valueById = {
+const valueById = {
     "1": "Beginner's Choice",
     "2": "Midway Performance",
     "3": "Pro Edge",
@@ -36,3 +36,4 @@ export const valueById = {
     "35": "Precision Performance",
     "36": "Legacy Luxe"
 }
+module.exports = valueById

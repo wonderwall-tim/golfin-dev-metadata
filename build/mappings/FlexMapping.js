@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -14,17 +13,15 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.FlexMapping = void 0;
-var valueById_js_1 = require("./values/flexs/valueById.js");
-var Mapping_js_1 = require("./Mapping.js");
+var valueById = require('./values/flexs/valueById.js');
+var Mapping = require('./Mapping.js');
 var FlexMapping = /** @class */ (function (_super) {
     __extends(FlexMapping, _super);
     function FlexMapping() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     FlexMapping.prototype.getValues = function () {
-        return valueById_js_1.valueById;
+        return valueById;
     };
     FlexMapping.prototype.shouldBuild = function (metadata, context) {
         return metadata.flex == null || metadata.core.flex == null;
@@ -40,7 +37,7 @@ var FlexMapping = /** @class */ (function (_super) {
         return metadata;
     };
     return FlexMapping;
-}(Mapping_js_1.Mapping));
-exports.FlexMapping = FlexMapping;
+}(Mapping));
 ;
+module.exports = FlexMapping;
 //# sourceMappingURL=FlexMapping.js.map

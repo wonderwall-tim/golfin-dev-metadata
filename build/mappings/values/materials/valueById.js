@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.valueById = void 0;
-exports.valueById = {
+var valueById = {
     "1": "Graphite (Lightweight and Strong)",
     "2": "Steel (Durable and Reliable)",
     "3": "Aluminum (Light and Corrosion-Resistant)",
@@ -39,4 +36,5 @@ exports.valueById = {
     "35": "Conductive Material (For Electronics)",
     "36": "Biodegradable Material (Eco-Friendly)"
 };
+module.exports = valueById;
 //# sourceMappingURL=valueById.js.map

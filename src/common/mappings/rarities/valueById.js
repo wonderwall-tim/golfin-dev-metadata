@@ -1,4 +1,4 @@
-export const valueById = {
+const valueById = {
     "1": "Supreme",
     "2": "Legendary",
     "3": "Epic",
@@ -6,3 +6,5 @@ export const valueById = {
     "5": "Uncommon",
     "6": "Common",
 }
+
+module.exports = valueById

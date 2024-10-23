@@ -1,4 +1,4 @@
-export const valueById = {
+const valueById = {
     "1": "Model X (High Performance)",
     "2": "Model Y (Versatile Design)",
     "3": "Model Z (All-Terrain Capability)",
@@ -36,3 +36,5 @@ export const valueById = {
     "35": "Model F2 (For Distance)",
     "36": "Model G2 (For Precision)"
 };
+
+module.exports = valueById

@@ -1,10 +1,10 @@
-import { valueById } from "./values/brands/valueById.js";
-import { Mapping } from "./Mapping.js";
+const valueById = require('./values/brands/valueById.js')
+const Mapping = require('./Mapping.js')
 
-export class BrandMapping extends Mapping {
+class BrandMapping extends Mapping {
 
   getValues() {
-    return valueById;
+    return valueById
   }
 
   shouldBuild(metadata, context) {
@@ -22,3 +22,5 @@ export class BrandMapping extends Mapping {
   }
 
 };
+
+module.exports = BrandMapping

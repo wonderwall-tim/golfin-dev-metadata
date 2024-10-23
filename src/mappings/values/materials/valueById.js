@@ -1,4 +1,4 @@
-export const valueById = {
+const valueById = {
     "1": "Graphite (Lightweight and Strong)",
     "2": "Steel (Durable and Reliable)",
     "3": "Aluminum (Light and Corrosion-Resistant)",
@@ -36,3 +36,5 @@ export const valueById = {
     "35": "Conductive Material (For Electronics)",
     "36": "Biodegradable Material (Eco-Friendly)"
 };
+
+module.exports = valueById;

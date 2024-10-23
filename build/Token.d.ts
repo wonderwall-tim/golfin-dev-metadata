@@ -1,4 +1,5 @@
-export class Token {
+export = Token;
+declare class Token {
     /**
      * @param {string|BN} id
      * @param {BitsLayout} layout
@@ -23,12 +24,12 @@ export class Token {
     }, options?: {
         autoPadding: boolean;
     });
-    id: any;
+    id: BN;
     coreMetadata: {};
     autoPadding: boolean;
     layout: any[];
     getLayout(): any[];
-    getTokenID(): any;
+    getTokenID(): BN;
     getCoreMetadata(): {};
     /**
      * @deprecated Use getMatchValue instead.
@@ -57,3 +58,4 @@ export class Token {
      */
     isMatchedTo(value: string | BN): boolean;
 }
+import BN = require("bn.js");

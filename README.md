@@ -293,7 +293,7 @@ Node-based Metadata generators for golfin dev
 - commit message as the version
 - git push to github
 - publish a new tag, click tags, create new release, enter the upcoming version (same as the verion on CHANGELOG, package), eg v1.0.0 the description is copying from the current CHANGELOG readme and click publish release
-- on other repo, package json using `golfin-dev-metadata: "git://github.com/<REPO>/golfin-dev-metadata.git#v<VERSIONING>"`
+- on other repo, package json using `golfin-dev-metadata: "https://github.com/<REPO>/golfin-dev-metadata.git#v<VERSIONING>"`
 - run the yarn, and the package can be used
 
 ## Running locally

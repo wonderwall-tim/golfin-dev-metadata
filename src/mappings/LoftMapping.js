@@ -1,7 +1,7 @@
-import { valueById } from "./values/lofts/valueById.js";
-import { Mapping } from "./Mapping.js";
+const valueById= require('./values/lofts/valueById.js')
+const Mapping = require('./Mapping.js')
 
-export class LoftMapping extends Mapping {
+class LoftMapping extends Mapping {
 
   getValues() {
     return valueById;
@@ -22,3 +22,5 @@ export class LoftMapping extends Mapping {
   }
 
 };
+
+module.exports = LoftMapping;

@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -14,21 +13,19 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.DescriptionMapping = void 0;
-var valueById_js_1 = require("./values/descriptions/valueById.js");
-var Mapping_js_1 = require("./Mapping.js");
-var MaterialMapping_js_1 = require("./MaterialMapping.js");
+var valueById = require('./values/descriptions/valueById.js');
+var Mapping = require('./Mapping.js');
+var MaterialMapping = require('./MaterialMapping.js');
 var DescriptionMapping = /** @class */ (function (_super) {
     __extends(DescriptionMapping, _super);
     function DescriptionMapping() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     DescriptionMapping.prototype.getPrerequisiteMappings = function () {
-        return [new MaterialMapping_js_1.MaterialMapping()];
+        return [new MaterialMapping()];
     };
     DescriptionMapping.prototype.getValues = function () {
-        return valueById_js_1.valueById;
+        return valueById;
     };
     DescriptionMapping.prototype.shouldBuild = function (metadata, context) {
         return metadata.item == null || metadata.core.item == null;
@@ -47,7 +44,7 @@ var DescriptionMapping = /** @class */ (function (_super) {
         return metadata;
     };
     return DescriptionMapping;
-}(Mapping_js_1.Mapping));
-exports.DescriptionMapping = DescriptionMapping;
+}(Mapping));
 ;
+module.exports = DescriptionMapping;
 //# sourceMappingURL=DescriptionMapping.js.map

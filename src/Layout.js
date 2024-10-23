@@ -1,10 +1,14 @@
-import BN from 'bn.js';
+/* import BN from 'bn.js';
 import bitJs from 'bits.js';
-import bigInt from "big-integer";
+import bigInt from "big-integer"; */
+
+const { bitJs } = require('bits.js')
+const { BN } = require('bn.js')
+const { bigInt } = require('big-integer')
 
 const CAR_TOKEN_BITS = [
     { name: "serialNumber", bits: 8 }, // New field for serial number
-    
+
     { name: "item", bits: 16 },         // Existing field
     { name: "appearance", bits: 12 },     // Updated field for appearance
 
@@ -15,15 +19,15 @@ const CAR_TOKEN_BITS = [
     { name: "spin", bits: 12 },         // New field for spin
     { name: "recovery", bits: 12 },     // New field for recovery
     { name: "durability", bits: 12 },   // New field for durability
-    
+
     { name: "weight", bits: 12 },       // New field for weight
     { name: "model", bits: 8 },         // New field for model
     { name: "rarity", bits: 8 },        // Existing field for rarity
     { name: "brand", bits: 8 },         // New field for brand
     { name: "flex", bits: 8 },          // New field for flex
-    
+
     { name: "padding3", bits: 24 },     // Padding
-    
+
     { name: "loft", bits: 8 },          // New field for loft
 
     { name: "padding2", bits: 16 }      // Padding
@@ -39,18 +43,18 @@ const TOKEN_TYPE_BITS = [
     { name: "nfFlag", bits: 1 }
 ];
 
-export const TOKEN_TYPE_LAYOUT = [
+const TOKEN_TYPE_LAYOUT = [
     { name: "padding", bits: 243 }, ...TOKEN_TYPE_BITS
 ];
 
-export const CAR_COLLECTION_LAYOUT = [...CAR_COLLECTION_BITS, ...TOKEN_TYPE_BITS];
-export const CAR_LAYOUT = [...CAR_TOKEN_BITS, ...CAR_COLLECTION_LAYOUT];
+const CAR_COLLECTION_LAYOUT = [...CAR_COLLECTION_BITS, ...TOKEN_TYPE_BITS];
+const CAR_LAYOUT = [...CAR_TOKEN_BITS, ...CAR_COLLECTION_LAYOUT];
 
 /**
 * @typedef {{name:string, bits: number}} BitsLayout
 * @typedef {BitsLayout[]} Layout
 */
-export function getLayoutMask(fullLayout, ...layoutBits) {
+function getLayoutMask(fullLayout, ...layoutBits) {
     const bnEntries = fullLayout.map(item => {
         if (layoutBits.includes(item.name)) {
             const value = (new BN(2)).pow(new BN(item.bits)).sub(new BN(1));
@@ -69,7 +73,7 @@ export function getLayoutMask(fullLayout, ...layoutBits) {
 * @param {string|BN} value
 * @returns {string[]}
 */
-export function extractFieldNames(fullLayout, value, base = 10) {
+function extractFieldNames(fullLayout, value, base = 10) {
     value = new BN(value, base);
     let currentBit = 0;
     return fullLayout.filter(({ bits }) => {
@@ -78,4 +82,13 @@ export function extractFieldNames(fullLayout, value, base = 10) {
         const fieldBitMask = value.and(mask);
         return !fieldBitMask.isZero();
     }).map(({ name }) => name);
+}
+
+
+module.exports = {
+    TOKEN_TYPE_LAYOUT,
+    CAR_COLLECTION_LAYOUT,
+    CAR_LAYOUT,
+    getLayoutMask,
+    extractFieldNames
 }

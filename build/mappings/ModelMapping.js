@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -14,17 +13,15 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.ModelMapping = void 0;
-var valueById_js_1 = require("./values/models/valueById.js");
-var Mapping_js_1 = require("./Mapping.js");
+var valueById = require('./values/models/valueById.js');
+var Mapping = require('./Mapping.js');
 var ModelMapping = /** @class */ (function (_super) {
     __extends(ModelMapping, _super);
     function ModelMapping() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     ModelMapping.prototype.getValues = function () {
-        return valueById_js_1.valueById;
+        return valueById;
     };
     ModelMapping.prototype.shouldBuild = function (metadata, context) {
         return metadata.material == null || metadata.core.material == null;
@@ -35,12 +32,14 @@ var ModelMapping = /** @class */ (function (_super) {
             metadata.core.model = this.getKeyFromValue(metadata.model);
         }
         else if (metadata.model == null) {
+            console.log('model second');
+            console.log(this.getValuesFromKey(metadata.core.model));
             metadata.model = this.getValuesFromKey(metadata.core.model);
         }
         return metadata;
     };
     return ModelMapping;
-}(Mapping_js_1.Mapping));
-exports.ModelMapping = ModelMapping;
+}(Mapping));
 ;
+module.exports = ModelMapping;
 //# sourceMappingURL=ModelMapping.js.map

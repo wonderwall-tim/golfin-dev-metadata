@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -14,17 +13,18 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.RarityMapping = void 0;
-var valueById_js_1 = require("../common/mappings/rarities/valueById.js");
-var Mapping_js_1 = require("./Mapping.js");
+/* import { valueById } from "../common/mappings/rarities/valueById.js"; */
+/* import { Mapping } from "./Mapping.js";
+ */
+var valueById = require('../common/mappings/rarities/valueById.js');
+var Mapping = require('./Mapping.js');
 var RarityMapping = /** @class */ (function (_super) {
     __extends(RarityMapping, _super);
     function RarityMapping() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     RarityMapping.prototype.getValues = function () {
-        return valueById_js_1.valueById;
+        return valueById;
     };
     RarityMapping.prototype.shouldBuild = function (metadata, context) {
         return metadata.rarity == null || metadata.core.rarity == null;
@@ -40,7 +40,7 @@ var RarityMapping = /** @class */ (function (_super) {
         return metadata;
     };
     return RarityMapping;
-}(Mapping_js_1.Mapping));
-exports.RarityMapping = RarityMapping;
+}(Mapping));
 ;
+module.exports = RarityMapping;
 //# sourceMappingURL=RarityMapping.js.map

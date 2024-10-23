@@ -1,4 +1,5 @@
-export class FlexMapping extends Mapping {
+export = FlexMapping;
+declare class FlexMapping extends Mapping {
     getValues(): {
         "1": string;
         "2": string;
@@ -40,4 +41,4 @@ export class FlexMapping extends Mapping {
     shouldBuild(metadata: any, context: any): boolean;
     build(metadata: any, context: any): any;
 }
-import { Mapping } from "./Mapping.js";
+import Mapping = require("./Mapping.js");

@@ -1,1 +1,1 @@
-export { OpenseaMapping } from "./OpenseaMapping";
+export {};

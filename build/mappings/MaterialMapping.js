@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -14,17 +13,15 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.MaterialMapping = void 0;
-var valueById_js_1 = require("./values/materials/valueById.js");
-var Mapping_js_1 = require("./Mapping.js");
+var valueById = require('./values/materials/valueById.js');
+var Mapping = require('./Mapping.js');
 var MaterialMapping = /** @class */ (function (_super) {
     __extends(MaterialMapping, _super);
     function MaterialMapping() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     MaterialMapping.prototype.getValues = function () {
-        return valueById_js_1.valueById;
+        return valueById;
     };
     MaterialMapping.prototype.shouldBuild = function (metadata, context) {
         return metadata.material == null || metadata.core.material == null;
@@ -40,7 +37,7 @@ var MaterialMapping = /** @class */ (function (_super) {
         return metadata;
     };
     return MaterialMapping;
-}(Mapping_js_1.Mapping));
-exports.MaterialMapping = MaterialMapping;
+}(Mapping));
 ;
+module.exports = MaterialMapping;
 //# sourceMappingURL=MaterialMapping.js.map

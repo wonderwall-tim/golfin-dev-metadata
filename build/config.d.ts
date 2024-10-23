@@ -1,4 +1,5 @@
-export const urls: {
+export = urls;
+declare const urls: {
     '1': {
         image_url: string;
         meta_url: string;

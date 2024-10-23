@@ -1,15 +1,16 @@
-export class BaseMapping extends Mapping {
+export = BaseMapping;
+declare class BaseMapping extends Mapping {
     getPrerequisiteMappings(): (RarityMapping | MaterialMapping | DescriptionMapping | LoftMapping | FlexMapping | BrandMapping | ModelMapping | TypeMapping | NameMapping | ImageMapping)[];
     build(metadata: any, context: any): any;
 }
-import { Mapping } from "./Mapping.js";
-import { RarityMapping } from "./RarityMapping.js";
-import { MaterialMapping } from "./MaterialMapping.js";
-import { DescriptionMapping } from "./DescriptionMapping.js";
-import { LoftMapping } from "./LoftMapping.js";
-import { FlexMapping } from "./FlexMapping.js";
-import { BrandMapping } from "./BrandMapping.js";
-import { ModelMapping } from "./ModelMapping.js";
-import { TypeMapping } from "./TypeMapping.js";
-import { NameMapping } from "./NameMapping.js";
-import { ImageMapping } from "./ImageMapping.js";
+import Mapping = require("./Mapping.js");
+import RarityMapping = require("./RarityMapping.js");
+import MaterialMapping = require("./MaterialMapping.js");
+import DescriptionMapping = require("./DescriptionMapping.js");
+import LoftMapping = require("./LoftMapping.js");
+import FlexMapping = require("./FlexMapping.js");
+import BrandMapping = require("./BrandMapping.js");
+import ModelMapping = require("./ModelMapping.js");
+import TypeMapping = require("./TypeMapping.js");
+import NameMapping = require("./NameMapping.js");
+import ImageMapping = require("./ImageMapping.js");

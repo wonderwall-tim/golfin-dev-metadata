@@ -1,21 +1,16 @@
-import { Mapping } from "./Mapping.js";
-/* import { ManufacturerMapping } from "./ManufacturerMapping";
-import { CollectionMapping } from "./CollectionMapping";
-import { ClassMapping } from "./ClassMapping"; */
-import { RarityMapping } from "./RarityMapping.js";
-/* import { YearMapping } from "./YearMapping";
-import { RacingAttributesMapping } from "./RacingAttributesMapping"; */
-import { DescriptionMapping } from "./DescriptionMapping.js";
-import { MaterialMapping } from "./MaterialMapping.js";
-import { LoftMapping } from "./LoftMapping.js";
-import { FlexMapping } from "./FlexMapping.js";
-import { BrandMapping } from "./BrandMapping.js";
-import { ModelMapping } from "./ModelMapping.js";
-import { ImageMapping } from "./ImageMapping.js";
-import { NameMapping } from "./NameMapping.js";
-import { TypeMapping } from "./TypeMapping.js";
+const Mapping = require('./Mapping.js')
+const RarityMapping = require('./RarityMapping.js')
+const DescriptionMapping = require('./DescriptionMapping.js')
+const MaterialMapping = require('./MaterialMapping.js')
+const LoftMapping = require('./LoftMapping.js')
+const FlexMapping = require('./FlexMapping.js')
+const BrandMapping = require('./BrandMapping.js')
+const ModelMapping = require('./ModelMapping.js')
+const ImageMapping = require('./ImageMapping.js')
+const NameMapping = require('./NameMapping.js')
+const TypeMapping = require('./TypeMapping.js')
 
-export class BaseMapping extends Mapping {
+class BaseMapping extends Mapping {
 
     getPrerequisiteMappings() {
         return [
@@ -41,3 +36,6 @@ export class BaseMapping extends Mapping {
     }
 
 };
+
+
+module.exports = BaseMapping

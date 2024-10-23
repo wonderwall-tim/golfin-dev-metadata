@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.urls = void 0;
-exports.urls = {
+var urls = {
     '1': {
         image_url: "purple-able-smelt-882.mypinata.cloud",
         meta_url: "https://game-meta.golfin.dev/",
@@ -28,4 +25,5 @@ exports.urls = {
         external_url: "https://golfin.io/en/"
     }
 };
+module.exports = urls;
 //# sourceMappingURL=config.js.map

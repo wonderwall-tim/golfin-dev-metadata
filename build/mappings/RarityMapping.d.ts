@@ -1,4 +1,5 @@
-export class RarityMapping extends Mapping {
+export = RarityMapping;
+declare class RarityMapping extends Mapping {
     getValues(): {
         "1": string;
         "2": string;
@@ -10,4 +11,4 @@ export class RarityMapping extends Mapping {
     shouldBuild(metadata: any, context: any): boolean;
     build(metadata: any, context: any): any;
 }
-import { Mapping } from "./Mapping.js";
+import Mapping = require("./Mapping.js");

@@ -1,8 +1,8 @@
-import { BaseMapping } from "./BaseMapping.js";
-import { Mapping } from "./Mapping.js";
-import { urls } from "../config.js";
+const BaseMapping = require('./BaseMapping.js')
+const Mapping = require('./Mapping.js')
+const urls = require('../config.js');
 
-export class OpenseaMapping extends Mapping {
+class OpenseaMapping extends Mapping {
 
     getPrerequisiteMappings() {
         return [new BaseMapping()];
@@ -64,3 +64,5 @@ export class OpenseaMapping extends Mapping {
     }
 
 };
+
+module.exports = OpenseaMapping

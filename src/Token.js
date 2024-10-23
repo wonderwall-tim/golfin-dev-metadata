@@ -1,9 +1,14 @@
-import bitJs from 'bits.js';
-import BN from 'bn.js';
-import bigInt from "big-integer";
-import { CAR_LAYOUT, /* BitsLayout */ getLayoutMask } from './Layout.js';
+/* import bitJs from 'bits.js'; */
+/* import BN from 'bn.js'; */
+/* import bigInt from "big-integer"; */
+/* import { CAR_LAYOUT,  getLayoutMask } from './Layout.js'; */
 
-export class Token {
+const bitJs = require('bits.js')
+const BN = require('bn.js')
+const bigInt = require('big-integer')
+const { CAR_LAYOUT, getLayoutMask } = require('./Layout.js')
+
+class Token {
 
   /**
    * 
@@ -134,3 +139,5 @@ export class Token {
   }
 }
 
+
+module.exports = Token

@@ -1,7 +1,10 @@
-import { valueById } from "../common/mappings/rarities/valueById.js";
-import { Mapping } from "./Mapping.js";
+/* import { valueById } from "../common/mappings/rarities/valueById.js"; */
+/* import { Mapping } from "./Mapping.js";
+ */
+const valueById= require('../common/mappings/rarities/valueById.js')
+const Mapping = require('./Mapping.js')
 
-export class RarityMapping extends Mapping {
+class RarityMapping extends Mapping {
 
   getValues() {
     return valueById;
@@ -22,3 +25,5 @@ export class RarityMapping extends Mapping {
   }
 
 };
+
+module.exports = RarityMapping;

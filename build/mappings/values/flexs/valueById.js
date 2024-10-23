@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.valueById = void 0;
-exports.valueById = {
+var valueById = {
     "1": "Soft Flex (Beginner)",
     "2": "Regular Flex (Intermediate)",
     "3": "Stiff Flex (Advanced)",
@@ -39,4 +36,5 @@ exports.valueById = {
     "35": "Customizable Flex (User-Defined)",
     "36": "Smart Flex (Tech-Integrated)"
 };
+module.exports = valueById;
 //# sourceMappingURL=valueById.js.map

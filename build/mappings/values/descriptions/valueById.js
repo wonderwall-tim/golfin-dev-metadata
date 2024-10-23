@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.valueById = void 0;
-exports.valueById = {
+var valueById = {
     "M1_I1": "Graphite shafts are lightweight and provide increased swing speed, ideal for beginners.",
     "M1_I2": "Steel shafts offer durability and control, preferred by many experienced players.",
     "M1_I3": "Titanium drivers are known for their strength and ability to maximize distance.",
@@ -63,4 +60,5 @@ exports.valueById = {
     "M12_I4": "Weather apps help golfers plan their rounds effectively.",
     "M12_I5": "Golf travel guides highlight the best courses around the world."
 };
+module.exports = valueById;
 //# sourceMappingURL=valueById.js.map

@@ -1,4 +1,5 @@
-export class Metadata {
+export = Metadata;
+declare class Metadata {
     /**
      *
      * @param {object} json
@@ -19,4 +20,3 @@ export class Metadata {
     getToken(): Token;
     toJSON(network?: string): any;
 }
-import { Token } from "./Token.js";

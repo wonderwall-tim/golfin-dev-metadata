@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.valueById = void 0;
-exports.valueById = {
+var valueById = {
     "M1_I1": "Novice",
     "M1_I2": "Intermediate",
     "M1_I3": "Pro",
@@ -63,4 +60,5 @@ exports.valueById = {
     "M12_I4": "Stability",
     "M12_I5": "Expert"
 };
+module.exports = valueById;
 //# sourceMappingURL=valueById.js.map

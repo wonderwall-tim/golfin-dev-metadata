@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -14,24 +13,17 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.BaseMapping = void 0;
-var Mapping_js_1 = require("./Mapping.js");
-/* import { ManufacturerMapping } from "./ManufacturerMapping";
-import { CollectionMapping } from "./CollectionMapping";
-import { ClassMapping } from "./ClassMapping"; */
-var RarityMapping_js_1 = require("./RarityMapping.js");
-/* import { YearMapping } from "./YearMapping";
-import { RacingAttributesMapping } from "./RacingAttributesMapping"; */
-var DescriptionMapping_js_1 = require("./DescriptionMapping.js");
-var MaterialMapping_js_1 = require("./MaterialMapping.js");
-var LoftMapping_js_1 = require("./LoftMapping.js");
-var FlexMapping_js_1 = require("./FlexMapping.js");
-var BrandMapping_js_1 = require("./BrandMapping.js");
-var ModelMapping_js_1 = require("./ModelMapping.js");
-var ImageMapping_js_1 = require("./ImageMapping.js");
-var NameMapping_js_1 = require("./NameMapping.js");
-var TypeMapping_js_1 = require("./TypeMapping.js");
+var Mapping = require('./Mapping.js');
+var RarityMapping = require('./RarityMapping.js');
+var DescriptionMapping = require('./DescriptionMapping.js');
+var MaterialMapping = require('./MaterialMapping.js');
+var LoftMapping = require('./LoftMapping.js');
+var FlexMapping = require('./FlexMapping.js');
+var BrandMapping = require('./BrandMapping.js');
+var ModelMapping = require('./ModelMapping.js');
+var ImageMapping = require('./ImageMapping.js');
+var NameMapping = require('./NameMapping.js');
+var TypeMapping = require('./TypeMapping.js');
 var BaseMapping = /** @class */ (function (_super) {
     __extends(BaseMapping, _super);
     function BaseMapping() {
@@ -39,16 +31,16 @@ var BaseMapping = /** @class */ (function (_super) {
     }
     BaseMapping.prototype.getPrerequisiteMappings = function () {
         return [
-            new BrandMapping_js_1.BrandMapping(),
-            new TypeMapping_js_1.TypeMapping(),
-            new FlexMapping_js_1.FlexMapping(),
-            new LoftMapping_js_1.LoftMapping(),
-            new MaterialMapping_js_1.MaterialMapping(),
-            new ModelMapping_js_1.ModelMapping(),
-            new RarityMapping_js_1.RarityMapping(),
-            new NameMapping_js_1.NameMapping(),
-            new DescriptionMapping_js_1.DescriptionMapping(),
-            new ImageMapping_js_1.ImageMapping()
+            new BrandMapping(),
+            new TypeMapping(),
+            new FlexMapping(),
+            new LoftMapping(),
+            new MaterialMapping(),
+            new ModelMapping(),
+            new RarityMapping(),
+            new NameMapping(),
+            new DescriptionMapping(),
+            new ImageMapping()
         ];
     };
     BaseMapping.prototype.build = function (metadata, context) {
@@ -59,7 +51,7 @@ var BaseMapping = /** @class */ (function (_super) {
         return metadata;
     };
     return BaseMapping;
-}(Mapping_js_1.Mapping));
-exports.BaseMapping = BaseMapping;
+}(Mapping));
 ;
+module.exports = BaseMapping;
 //# sourceMappingURL=BaseMapping.js.map

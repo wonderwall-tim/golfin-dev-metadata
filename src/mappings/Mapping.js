@@ -1,8 +1,12 @@
-import { Metadata } from "../Metadata.js"
+/* import { Metadata } from "../Metadata.js"
 import assert from "assert";
 import deepEqual from "deep-equal";
+ */
+const Metadata = require('../Metadata.js')
+const assert = require('assert')
+const deepEqual = require('deep-equal')
 
-export class Mapping {
+class Mapping {
 
   constructor() {
   };
@@ -23,7 +27,7 @@ export class Mapping {
   }
 
   getKeyFromValue(value) {
-    const values = this.getValues();
+    const values = this.getValues();    
     const entry = Object.entries(values).find((entry) => deepEqual(entry[1], value));
     if (entry == null) {
       throw new Error(`Cannot find mapping of ${JSON.stringify(value)}`);
@@ -59,3 +63,6 @@ export class Mapping {
   }
 
 };
+
+
+module.exports = Mapping

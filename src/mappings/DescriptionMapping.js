@@ -1,8 +1,8 @@
-import { valueById } from "./values/descriptions/valueById.js";
-import { Mapping } from "./Mapping.js";
-import { MaterialMapping } from "./MaterialMapping.js";
+const valueById = require('./values/descriptions/valueById.js')
+const Mapping = require('./Mapping.js')
+const MaterialMapping = require('./MaterialMapping.js')
 
-export class DescriptionMapping extends Mapping {
+class DescriptionMapping extends Mapping {
 
   getPrerequisiteMappings() {
     return [new MaterialMapping()];
@@ -32,3 +32,4 @@ export class DescriptionMapping extends Mapping {
   }
 
 };
+module.exports = DescriptionMapping;

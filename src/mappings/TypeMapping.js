@@ -1,7 +1,7 @@
-import { valueById } from "../common/mappings/types/valueById.js";
-import { Mapping } from "./Mapping.js";
+const valueById= require('../common/mappings/types/valueById.js')
+const Mapping = require('./Mapping.js')
 
-export class TypeMapping extends Mapping {
+class TypeMapping extends Mapping {
 
   getValues() {
     return valueById;
@@ -20,5 +20,7 @@ export class TypeMapping extends Mapping {
     }
     return metadata;
   }
-  
+
 };
+
+module.exports = TypeMapping

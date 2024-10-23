@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -14,18 +13,16 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.OpenseaMapping = void 0;
-var BaseMapping_js_1 = require("./BaseMapping.js");
-var Mapping_js_1 = require("./Mapping.js");
-var config_js_1 = require("../config.js");
+var BaseMapping = require('./BaseMapping.js');
+var Mapping = require('./Mapping.js');
+var urls = require('../config.js');
 var OpenseaMapping = /** @class */ (function (_super) {
     __extends(OpenseaMapping, _super);
     function OpenseaMapping() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     OpenseaMapping.prototype.getPrerequisiteMappings = function () {
-        return [new BaseMapping_js_1.BaseMapping()];
+        return [new BaseMapping()];
     };
     OpenseaMapping.prototype.build = function (metadata, context) {
         metadata = _super.prototype.build.call(this, metadata, context);
@@ -70,11 +67,11 @@ var OpenseaMapping = /** @class */ (function (_super) {
                 });
             }
         }
-        metadata.external_url = config_js_1.urls[context.network].external_url;
+        metadata.external_url = urls[context.network].external_url;
         return metadata;
     };
     return OpenseaMapping;
-}(Mapping_js_1.Mapping));
-exports.OpenseaMapping = OpenseaMapping;
+}(Mapping));
 ;
+module.exports = OpenseaMapping;
 //# sourceMappingURL=OpenseaMapping.js.map

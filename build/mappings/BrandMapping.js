@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -14,17 +13,15 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.BrandMapping = void 0;
-var valueById_js_1 = require("./values/brands/valueById.js");
-var Mapping_js_1 = require("./Mapping.js");
+var valueById = require('./values/brands/valueById.js');
+var Mapping = require('./Mapping.js');
 var BrandMapping = /** @class */ (function (_super) {
     __extends(BrandMapping, _super);
     function BrandMapping() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     BrandMapping.prototype.getValues = function () {
-        return valueById_js_1.valueById;
+        return valueById;
     };
     BrandMapping.prototype.shouldBuild = function (metadata, context) {
         return metadata.brand == null || metadata.core.brand == null;
@@ -40,7 +37,7 @@ var BrandMapping = /** @class */ (function (_super) {
         return metadata;
     };
     return BrandMapping;
-}(Mapping_js_1.Mapping));
-exports.BrandMapping = BrandMapping;
+}(Mapping));
 ;
+module.exports = BrandMapping;
 //# sourceMappingURL=BrandMapping.js.map

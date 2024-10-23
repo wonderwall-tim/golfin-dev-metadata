@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -14,17 +13,15 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.LoftMapping = void 0;
-var valueById_js_1 = require("./values/lofts/valueById.js");
-var Mapping_js_1 = require("./Mapping.js");
+var valueById = require('./values/lofts/valueById.js');
+var Mapping = require('./Mapping.js');
 var LoftMapping = /** @class */ (function (_super) {
     __extends(LoftMapping, _super);
     function LoftMapping() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     LoftMapping.prototype.getValues = function () {
-        return valueById_js_1.valueById;
+        return valueById;
     };
     LoftMapping.prototype.shouldBuild = function (metadata, context) {
         return metadata.loft == null || metadata.core.loft == null;
@@ -40,7 +37,7 @@ var LoftMapping = /** @class */ (function (_super) {
         return metadata;
     };
     return LoftMapping;
-}(Mapping_js_1.Mapping));
-exports.LoftMapping = LoftMapping;
+}(Mapping));
 ;
+module.exports = LoftMapping;
 //# sourceMappingURL=LoftMapping.js.map

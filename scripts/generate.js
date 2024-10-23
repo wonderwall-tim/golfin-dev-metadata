@@ -1,6 +1,8 @@
-import { Metadata } from '../src/Metadata.js'
-import { CAR_LAYOUT } from '../src/Layout.js';
-import { Token } from '../src/Token.js'
+
+const Metadata = require('../src/Metadata.js')
+const Token = require('../src/Token.js')
+const { CAR_LAYOUT } = require('../src/Layout.js')
+
 const core = {
     serialNumber: "4",
 
@@ -12,8 +14,8 @@ const core = {
     spin: "600",
     recovery: "200",
     durability: "340",
+    
     weight: "7",
-
     model: "1",
     rarity: "4",
     brand: "5",
@@ -24,8 +26,7 @@ const core = {
     type: "1",
     nfFlag: "1"
 }
-
-export const toJSON = (core) => {
+const toJSON = (core) => {
     const token = Token.fromMetadata(core, CAR_LAYOUT);
     const metadata = new Metadata(token).toJSON();
     console.log(`---------------------"${metadata.name}"-----------------------`);
@@ -34,7 +35,8 @@ export const toJSON = (core) => {
     console.log(`------------------========================---------------------`);
 }
 
-toJSON(core);
+module.exports = toJSON(core);
+
 const example = {
     core: {
         serialNumber: '4',

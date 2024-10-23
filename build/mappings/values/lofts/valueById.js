@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.valueById = void 0;
-exports.valueById = {
+var valueById = {
     "1": "Standard Loft",
     "2": "Controlled Loft",
     "3": "Distance Driver Loft",
@@ -39,4 +36,5 @@ exports.valueById = {
     "35": "NextGen Loft",
     "36": "Legacy Loft"
 };
+module.exports = valueById;
 //# sourceMappingURL=valueById.js.map

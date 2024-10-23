@@ -1,4 +1,4 @@
-export const valueById = {
+const valueById = {
     "1": "Standard Loft",
     "2": "Controlled Loft",
     "3": "Distance Driver Loft",
@@ -36,3 +36,5 @@ export const valueById = {
     "35": "NextGen Loft",
     "36": "Legacy Loft"
 }
+
+module.exports = valueById

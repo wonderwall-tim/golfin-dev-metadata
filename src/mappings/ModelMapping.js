@@ -1,7 +1,6 @@
-import { valueById } from "./values/models/valueById.js";
-import { Mapping } from "./Mapping.js";
-
-export class ModelMapping extends Mapping {
+const valueById= require('./values/models/valueById.js')
+const Mapping = require('./Mapping.js')
+class ModelMapping extends Mapping {
 
   getValues() {
     return valueById;
@@ -16,9 +15,14 @@ export class ModelMapping extends Mapping {
     if (context.coreOnly && metadata.core.model == null) {
       metadata.core.model = this.getKeyFromValue(metadata.model);
     } else if (metadata.model == null) {
+      console.log('model second');
+      console.log(this.getValuesFromKey(metadata.core.model));
+      
       metadata.model = this.getValuesFromKey(metadata.core.model);
     }
     return metadata;
   }
 
 };
+
+module.exports = ModelMapping

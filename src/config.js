@@ -1,4 +1,4 @@
-export const urls = {
+const urls = {
     '1': {
         image_url: "purple-able-smelt-882.mypinata.cloud",
         meta_url: "https://game-meta.golfin.dev/",
@@ -25,3 +25,5 @@ export const urls = {
         external_url: "https://golfin.io/en/"
     }
 };
+
+module.exports = urls

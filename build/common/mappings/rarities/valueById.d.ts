@@ -1,4 +1,5 @@
-export const valueById: {
+export = valueById;
+declare const valueById: {
     "1": string;
     "2": string;
     "3": string;

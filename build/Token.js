@@ -1,4 +1,7 @@
-"use strict";
+/* import bitJs from 'bits.js'; */
+/* import BN from 'bn.js'; */
+/* import bigInt from "big-integer"; */
+/* import { CAR_LAYOUT,  getLayoutMask } from './Layout.js'; */
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -19,12 +22,10 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     }
     return to.concat(ar || Array.prototype.slice.call(from));
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Token = void 0;
-var bits_js_1 = require("bits.js");
-var bn_js_1 = require("bn.js");
-var big_integer_1 = require("big-integer");
-var Layout_js_1 = require("./Layout.js");
+var bitJs = require('bits.js');
+var BN = require('bn.js');
+var bigInt = require('big-integer');
+var _a = require('./Layout.js'), CAR_LAYOUT = _a.CAR_LAYOUT, getLayoutMask = _a.getLayoutMask;
 var Token = /** @class */ (function () {
     /**
      *
@@ -32,10 +33,10 @@ var Token = /** @class */ (function () {
      * @param {{name:string, bits: number}} layout
      */
     function Token(data, layout, options) {
-        if (layout === void 0) { layout = Layout_js_1.CAR_LAYOUT; }
+        if (layout === void 0) { layout = CAR_LAYOUT; }
         if (options === void 0) { options = { autoPadding: true }; }
         if (data.id) {
-            this.id = new bn_js_1.default(data.id);
+            this.id = new BN(data.id);
         }
         else if (data.metadata && data.metadata) {
             this.coreMetadata = {};
@@ -72,20 +73,20 @@ var Token = /** @class */ (function () {
             this.layout.forEach(function (_a) {
                 var name = _a.name;
                 if (name.startsWith("padding") && core_1[name] == undefined) {
-                    core_1[name] = new big_integer_1.default(0);
+                    core_1[name] = new bigInt(0);
                 }
                 else {
-                    core_1[name] = new big_integer_1.default(core_1[name]);
+                    core_1[name] = new bigInt(core_1[name]);
                 }
             });
-            this.id = new bn_js_1.default(bits_js_1.default.encode(this.layout, core_1).toString());
+            this.id = new BN(bitJs.encode(this.layout, core_1).toString());
         }
         return this.id;
     };
     Token.prototype.getCoreMetadata = function () {
         if (!this.coreMetadata) {
-            var id = new big_integer_1.default(this.id.toString());
-            var decodedObj_1 = bits_js_1.default.decode(this.layout, id);
+            var id = new bigInt(this.id.toString());
+            var decodedObj_1 = bitJs.decode(this.layout, id);
             var core = Object.keys(decodedObj_1)
                 .reduce(function (acc, name) {
                 if (!name.startsWith("padding")) {
@@ -108,7 +109,7 @@ var Token = /** @class */ (function () {
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        var layoutMask = Layout_js_1.getLayoutMask.apply(void 0, __spreadArray([this.layout], args, false));
+        var layoutMask = getLayoutMask.apply(void 0, __spreadArray([this.layout], args, false));
         return layoutMask.and(this.getTokenID());
     };
     /**
@@ -121,7 +122,7 @@ var Token = /** @class */ (function () {
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        var layoutMask = Layout_js_1.getLayoutMask.apply(void 0, __spreadArray([this.layout], args, false));
+        var layoutMask = getLayoutMask.apply(void 0, __spreadArray([this.layout], args, false));
         return layoutMask.and(this.getTokenID());
     };
     /**
@@ -138,7 +139,7 @@ var Token = /** @class */ (function () {
         if (token.constructor.name == "Token") {
             token = token.getTokenID();
         }
-        var layoutMask = Layout_js_1.getLayoutMask.apply(void 0, __spreadArray([this.layout], fields, false));
+        var layoutMask = getLayoutMask.apply(void 0, __spreadArray([this.layout], fields, false));
         return token.and(layoutMask).eq(this.getTokenID().and(layoutMask));
     };
     /**
@@ -148,13 +149,13 @@ var Token = /** @class */ (function () {
      */
     Token.prototype.isMatchedTo = function (value) {
         if (typeof value === 'string') {
-            value = new bn_js_1.default(value);
+            value = new BN(value);
         }
         var currentBit = 0;
         var tokenId = this.getTokenID();
         return this.layout.every(function (_a) {
             var _ = _a._, bits = _a.bits;
-            var mask = (new bn_js_1.default(2)).pow(new bn_js_1.default(bits)).sub(new bn_js_1.default(1)).iushln(currentBit);
+            var mask = (new BN(2)).pow(new BN(bits)).sub(new BN(1)).iushln(currentBit);
             currentBit += bits;
             var fieldBitMask = value.and(mask);
             return fieldBitMask.isZero() || tokenId.and(mask).eq(fieldBitMask);
@@ -162,5 +163,5 @@ var Token = /** @class */ (function () {
     };
     return Token;
 }());
-exports.Token = Token;
+module.exports = Token;
 //# sourceMappingURL=Token.js.map

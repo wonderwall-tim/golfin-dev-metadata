@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -14,17 +13,15 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.TypeMapping = void 0;
-var valueById_js_1 = require("../common/mappings/types/valueById.js");
-var Mapping_js_1 = require("./Mapping.js");
+var valueById = require('../common/mappings/types/valueById.js');
+var Mapping = require('./Mapping.js');
 var TypeMapping = /** @class */ (function (_super) {
     __extends(TypeMapping, _super);
     function TypeMapping() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     TypeMapping.prototype.getValues = function () {
-        return valueById_js_1.valueById;
+        return valueById;
     };
     TypeMapping.prototype.shouldBuild = function (metadata, context) {
         return metadata.type == null || metadata.core.type == null;
@@ -40,7 +37,7 @@ var TypeMapping = /** @class */ (function (_super) {
         return metadata;
     };
     return TypeMapping;
-}(Mapping_js_1.Mapping));
-exports.TypeMapping = TypeMapping;
+}(Mapping));
 ;
+module.exports = TypeMapping;
 //# sourceMappingURL=TypeMapping.js.map

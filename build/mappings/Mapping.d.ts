@@ -1,4 +1,5 @@
-export class Mapping {
+export = Mapping;
+declare class Mapping {
     getName(): string;
     getValues(): {};
     getValuesFromKey(key: any): any;
@@ -15,4 +16,4 @@ export class Mapping {
         mappings: string[];
     }): any;
 }
-import { Metadata } from "../Metadata.js";
+import Metadata = require("../Metadata.js");

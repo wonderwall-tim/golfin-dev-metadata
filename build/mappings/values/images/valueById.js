@@ -1,8 +1,5 @@
-"use strict";
 /* PENDING */
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.valueById = void 0;
-exports.valueById = {
+var valueById = {
     '*': ".png",
     "T1_M2_I1_A1": ".jpg",
     "T1_M2_I2_A1": ".jpg",
@@ -19,4 +16,5 @@ exports.valueById = {
     "T1_M2_I4_A1": ".jpg",
     "T1_M2_I4_A2": ".jpg"
 };
+module.exports = valueById;
 //# sourceMappingURL=valueById.js.map
