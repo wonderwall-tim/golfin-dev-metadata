@@ -1,5 +1,9 @@
 # CHANGELOG (UPDATE IT FOR EVERY COMMIT)
 
+## 1.1.3 (2024/11/14)
+* generateTokens script
+* update the name and description valueById mapping
+
 ## 1.1.2 (2024/10/23)
 * BitsLayout
 

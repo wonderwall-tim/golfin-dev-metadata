@@ -70,6 +70,151 @@ const valueById =
     "M12_I2": "Improvement",
     "M12_I3": "Power",
     "M12_I4": "Stability",
-    "M12_I5": "Expert"
-}
+    "M12_I5": "Expert",
+
+    "M13_I1": "Innovation",
+    "M13_I2": "Velocity",
+    "M13_I3": "Impact",
+    "M13_I4": "Elite",
+    "M13_I5": "Titanium-X",
+
+    "M14_I1": "Stability",
+    "M14_I2": "Performance",
+    "M14_I3": "Crafted",
+    "M14_I4": "Signature",
+    "M14_I5": "Fusion-X",
+
+    "M15_I1": "Power",
+    "M15_I2": "All-Terrain",
+    "M15_I3": "Utility",
+    "M15_I4": "Dynamic",
+    "M15_I5": "Pro-Performance",
+
+    "M16_I1": "Hybrid",
+    "M16_I2": "Utility",
+    "M16_I3": "Signature",
+    "M16_I4": "Extreme",
+    "M16_I5": "Ultra-X",
+
+    "M17_I1": "Performance",
+    "M17_I2": "High-Tech",
+    "M17_I3": "Classic",
+    "M17_I4": "Luxury",
+    "M17_I5": "Legendary-X",
+
+    "M18_I1": "Advanced",
+    "M18_I2": "Timeless",
+    "M18_I3": "Epic",
+    "M18_I4": "Master",
+    "M18_I5": "Stellar-X",
+
+    "M19_I1": "Control",
+    "M19_I2": "Comprehensive",
+    "M19_I3": "Dynamic ",
+    "M19_I4": "Customizable",
+    "M19_I5": "Launch-X",
+
+    "M20_I1": "Eco",
+    "M20_I2": "Sustainable",
+    "M20_I3": "Performance",
+    "M20_I4": "Precision",
+    "M20_I5": "Innovation-X",
+
+    "M21_I1": "Impact",
+    "M21_I2": "Distance",
+    "M21_I3": "Power",
+    "M21_I4": "Control",
+    "M21_I5": "Expert-X",
+
+    "M22_I1": "Signature",
+    "M22_I2": "Hybrid",
+    "M22_I3": "Utility",
+    "M22_I4": "All-in-One",
+    "M22_I5": "High-Performance-X",
+
+    "M23_I1": "Luxury",
+    "M23_I2": "Legendary",
+    "M23_I3": "Timeless",
+    "M23_I4": "Epic",
+    "M23_I5": "Supreme-X",
+
+    "M24_I1": "Advanced",
+    "M24_I2": "Classic",
+    "M24_I3": "Dynamic",
+    "M24_I4": "Stability",
+    "M24_I5": "Velocity-X",
+
+    "M25_I1": "Control",
+    "M25_I2": "Performance",
+    "M25_I3": "Expert",
+    "M25_I4": "Crafted",
+    "M25_I5": "NextGen-X",
+
+    "M26_I1": "Power",
+    "M26_I2": "All-Terrain",
+    "M26_I3": "Signature",
+    "M26_I4": "Utility",
+    "M26_I5": "Hybrid-X",
+
+    "M27_I1": "Stellar",
+    "M27_I2": "Impact",
+    "M27_I3": "Precision",
+    "M27_I4": "Timeless",
+    "M27_I5": "Luxury-X",
+
+    "M28_I1": "Epic",
+    "M28_I2": "Legendary",
+    "M28_I3": "High-Tech",
+    "M28_I4": "Sustainable",
+    "M28_I5": "Innovation-Y",
+
+    "M29_I1": "Dynamic",
+    "M29_I2": "Control",
+    "M29_I3": "Performance",
+    "M29_I4": "Expert",
+    "M29_I5": "All-in-One-X",
+
+    "M30_I1": "Master",
+    "M30_I2": "Stability",
+    "M30_I3": "Velocity",
+    "M30_I4": "Signature",
+    "M30_I5": "Hybrid-Y",
+
+    "M31_I1": "Supreme",
+    "M31_I2": "Timeless",
+    "M31_I3": "Classic",
+    "M31_I4": "Dynamic",
+    "M31_I5": "Luxury-Y",
+
+    "M32_I1": "High-Performance",
+    "M32_I2": "Legendary",
+    "M32_I3": "Epic",
+    "M32_I4": "Control",
+    "M32_I5": "Expert-Y",
+
+    "M33_I1": "Precision",
+    "M33_I2": "Impact",
+    "M33_I3": "Power",
+    "M33_I4": "All-Terrain",
+    "M33_I5": "NextGen-Y",
+
+    "M34_I1": "Crafted",
+    "M34_I2": "Utility",
+    "M34_I3": "Signature",
+    "M34_I4": "Performance",
+    "M34_I5": "Stellar-Y",
+
+    "M35_I1": "Innovation",
+    "M35_I2": "Timeless",
+    "M35_I3": "Epic",
+    "M35_I4": "Dynamic",
+    "M35_I5": "Luxury-Z",
+
+    "M36_I1": "Advanced",
+    "M36_I2": "Control",
+    "M36_I3": "Performance",
+    "M36_I4": "Expert",
+    "M36_I5": "Legendary-Z"
+};
+
 module.exports = valueById
