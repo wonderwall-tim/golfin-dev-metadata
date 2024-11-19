@@ -1,5 +1,8 @@
 # CHANGELOG (UPDATE IT FOR EVERY COMMIT)
 
+## 1.1.4 (2024/11/19)
+* attribute of openseaMapping destruct based on the fulfillment on the metadata payload
+
 ## 1.1.3 (2024/11/14)
 * generateTokens script
 * update the name and description valueById mapping
