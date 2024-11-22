@@ -1,6 +1,6 @@
 {
   "name": "golfin-dev-metadata",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "main": "dist/index.js",
   "repository": "git@github.com:wonderwall-tim/golfin-dev-metadata.git",
   "author": "wonderwall-tim <timothy.chow@wonderwall-g.gmail.com>",
@@ -8,13 +8,13 @@
   "scripts": {
     "start": "nodemon --exec \"npm run clean && npm run build\"",
     "clean": "rm -rf dist build",
-    "build": "yarn clean && yarn babel-build && yarn tsc-build",
+    "build": "npm cache clean --force && npm run babel-build && npm run tsc-build",
     "tsc-build": "tsc --skipLibCheck && rsync -a --prune-empty-dirs --include '*/' --include '*.d.ts' --exclude '*' build/ dist/",
     "babel-build": "babel src --out-dir dist --source-maps inline --copy-files",
     "run-script": "nodemon --exec babel-node",
     "release": "NODE_ENV=test np --any-branch",
-    "prepack": "yarn build",
-    "generate": "yarn build && node dist/scripts/generate.js"
+    "prepack": "npm run build",
+    "generate": "npm run build && node dist/scripts/generate.js"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +22,7 @@
     "bits.js": "^0.1.1",
     "bn.js": "^5.2.0",
     "deep-equal": "^2.0.5",
+    "dotenv": "^16.4.5",
     "typescript": "^4.5.4"
   },
   "devDependencies": {

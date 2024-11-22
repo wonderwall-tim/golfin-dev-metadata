@@ -303,7 +303,7 @@ Node-based Metadata generators for golfin dev
 * Add basic token support on club
 ```
 - on other repo, package json using `golfin-dev-metadata: "https://github.com/<REPO>/golfin-dev-metadata.git#v<VERSIONING>"`
-- run the yarn, and the package can be used
+- run the npm, and the package can be used
 
 ## Running locally
 

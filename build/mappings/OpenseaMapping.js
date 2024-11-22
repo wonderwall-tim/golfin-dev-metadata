@@ -19,7 +19,7 @@ class OpenseaMapping extends Mapping {
                 { trait_type: "weight", value: `${metadata.core.weight}kg` },
                 { trait_type: "serial_number", value: metadata.core.serialNumber }
             ];
-            if ((metadata.core.handling && metadata.core.topSpeed && metadata.core.acceleration)) {
+            if ((metadata.core.durability && metadata.core.recovery && metadata.core.spin && metadata.core.accuracy && metadata.core.power)) {
                 metadata.attributes.push({
                     display_type: "boost_number",
                     trait_type: "durability",
